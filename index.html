@@ -20,6 +20,15 @@
         height: 300px;  
     }
 
+    .all-players {
+         width: 882px;
+    }
+
+    .all-players:after {
+        clear: both;
+        content: '';
+    }
+
     .a-input-search {
         width: 19px;
         height: 19px;
@@ -56,8 +65,9 @@
     }
 
     .info {
+        width: 330px;
         float: right;
-        margin: 30px 70px 56px 0;
+        margin: 30px 0px 56px 0px;
     }
 
     .input-search {
@@ -116,8 +126,13 @@
 
     .player {
         padding:10px;
-        width: 64%;
-        float: left;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .player:after{
+        content: '';
+        clear: both;
     }
 
     .player-icon {
@@ -164,7 +179,7 @@
             <a href="#"><img src="apple-touch-icon.png" class="logo-img"></a>
          </section>
     <section class="search">
-            <input type="text" class="input-search" placeholder=" Поиск трека..." >
+            <input type="text" class="input-search" placeholder=" Поиск трека..." onchange="alert(this.value)" >
           <a class="a-input-search">
               <img src="lupa.png" class="img-input-search" onClick="someFunc()">
           </a>
@@ -219,7 +234,7 @@
     </section>
 
     <section class="track">
-        <h3> Шальная императрица </h3>
+        <h3 class="author"> Шальная императрица </h3>
         <h5> Ирина Аллегрова </h5>
     </section>
 
@@ -253,8 +268,8 @@
     </section>
 
     <section class="track">
-        <h3> Шальная императрица </h3>
-        <h5> Ирина Аллегрова </h5>
+        <h3 class="track-author"> Шальная императрица </h3>
+        <h5 class="track-name"> Ирина Аллегрова </h5>
     </section>
 
     <section class="time">
@@ -269,10 +284,27 @@
 </section>
 
 <script>
-        function someFunc(){ 
-            alert(document.getElementsByClassName("input-search").value);
-        }
-        document.getElementsByClassName("img-input-searchs").onclick = someFunc;
+        function someFunc(){ alert(document.getElementsByClassName("input-search")[0].value); }
+        var array = [ 
+            {img_url: "album.jpg",name: "ghghh" , author: "ffff", time: 3.25},  
+            {img_url: "album.jpg",name: "ghggffddfghjkkjhgfdfhhh" , author: "ffff", time: 3.25} ]
+
+            for (var i=0; i<array.length; i++){ document.body.innerHTML = '<section class="player\">
+
+    <section class="player-icon">
+        <img src="' + array[i].img_url +'" class="img-player-icon"> 
+    </section>
+
+    <section class="track">
+        <h3> Шальная императрица </h3>
+        <h5> Ирина Аллегрова </h5>
+    </section>
+
+    <section class="time">
+    3:25
+    </section>
+
+</section> array[i].name } 
         </script>
 
     </body>
