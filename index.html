@@ -35,7 +35,7 @@
         content: '';
     }
 
-    .a-input-search {
+    .header__a-input-search {
         width: 19px;
         height: 19px;
         cursor: pointer;
@@ -70,7 +70,7 @@
         margin-left: 61px;
     }
 
-    .R-box {
+    .r-box {
         width: 330px;
         height: 300px;
         float: right;
@@ -78,7 +78,7 @@
         border: 1px solid;
     }
 
-    .input-search {
+    .header__input-search {
 		border-radius: 20px;
         border: 0px;
         margin-left: 10px;
@@ -91,13 +91,10 @@
         max-width: 100%;
     }
 
-    .img-input-search{
+    .header__img-input-search{
         max-width: 100%;
     }
 
-    .img-player-icon{
-        max-width: 100%;
-    }
 
     header {
         background: url("fon.jpg") no-repeat;
@@ -108,13 +105,13 @@
         height: 100px; /* Современные браузеры */
     }
 
-    .logo {
+    .header__logo {
         margin: 10px;
         float: left;
         width: 82px;
     }
 
-    .logo-img {
+    .header__logo-img {
         max-width: 100%;
         border-radius: 40px;
     }
@@ -134,29 +131,29 @@
 
     
 
-    .player {
+    .all-players__player {
         padding:10px;
         width: 100%;
         overflow: hidden;
     }
 
-    .player:after{
+    .all-players__player:after{
         content: '';
         clear: both;
     }
 
-    .player:hover {
+    .all-players__player:hover {
          outline: 1px solid #4A90E2;
     }
 
-    .player-icon {
+    .all-players__player-icon {
         float: left;
         width: 40px;
         height: 40px;
         margin-right:5px;
     }
 
-    .profile {
+    .header__profile {
         float: right;
         margin-top: 20px;
         margin-right: 25px;
@@ -164,12 +161,12 @@
         height: 50px;
     }
 
-    .profile-img{
+    .header__profile-img {
         max-width: 100%;
         border-radius: 40px;
     }
 
-    .search {
+    .header__search {
         float: left;
         margin-top: 40px;
     }
@@ -179,7 +176,7 @@
         margin-right: 10px;
     }
     
-    .track{
+    .all-players__track{
         width: 80%;
         float: left;
     }
@@ -188,112 +185,47 @@
 
     <body>
 <header>
-        <section class="logo">
-            <a href="#"><img src="apple-touch-icon.png" class="logo-img"></a>
+        <section class="header__logo">
+            <a href="#"><img src="apple-touch-icon.png" class="header__logo-img"></a>
          </section>
-    <section class="search">
-            <input type="text" class="input-search" placeholder=" Поиск трека..." >
-          <a class="a-input-search">
-              <img src="lupa.png" class="img-input-search" >
+    <section class="header__search">
+            <input type="text" class="header__input-search" placeholder=" Поиск трека..." >
+          <a class="header__a-input-search">
+              <img src="lupa.png" class="header__img-input-search" >
           </a>
         </section>
-		<section class="profile" >
-            <img src="profile.png" class="profile-img">
+		<section class="header__profile" >
+            <img src="profile.png" class="header__profile-img">
 		</section>
 
 </header>
+
 <section class="main">
 
-<section class="R-box">
-    <section class = "youtube" align = "center" >
-    </section>
+	<section class="r-box">
+	    <section class = "r-box__youtube" align = "center" >
+	    </section>
 
-   <!-- <section class="album">
+	</section> 
 
-        <img src="album.jpg" class="img-album">
-    </section>
+	<section class="all-players">
+	<!-- <section class="player">
 
-    <section class = "author">
+	    <section class="player-icon">
+	        <img src="album.jpg" class="img-player-icon"> 
+	    </section>
 
-        <br>
-        <h3> Шальная императрица </h3>
-        <h5> Ирина Аллегрова </h5>
-        <br>
+	    <section class="track">
+	        <h3 class="author"> Шальная императрица </h3>
+	        <h5> Ирина Аллегрова </h5>
+	    </section>
 
-    </section>
-    
-    <section class="icons">
+	</section> -->
 
-        <section class="back">
-            <img src="prev.png">
-    </section>
-
-    <section class="play">
-        <img src="play.png">
-</section>
-
-<section class="next">
-    <img src="next.png">
-</section> 
-
-    </section> -->
-
-</section> 
-
-<section class="all-players">
-<!-- <section class="player">
-
-    <section class="player-icon">
-        <img src="album.jpg" class="img-player-icon"> 
-    </section>
-
-    <section class="track">
-        <h3 class="author"> Шальная императрица </h3>
-        <h5> Ирина Аллегрова </h5>
-    </section>
-
-    <section class="time">
-    3:25
-    </section>
+	</section>
 
 </section>
 
-<section class="player">
-
-    <section class="player-icon">
-        <img src="album.jpg" class="img-player-icon"> 
-    </section>
-
-    <section class="track">
-        <h3> Шальная императрица </h3>
-        <h5> Ирина Аллегрова </h5>
-    </section>
-
-    <section class="time">
-    3:25
-    </section>
-
-</section> 
-
-<section class="player">
-
-  <section class="player-icon">
-        <img src="album.jpg" class="img-player-icon"> 
-    </section>
-
-    <section class="track">
-        <h3 class="track-author"> Шальная императрица </h3>
-        <h5 class="track-name"> Ирина Аллегрова </h5>
-    </section>
-
-    <section class="time">
-    3:25
-    </section> -->
-
-    </section> 
-
-
-</section>
 
  
 <script>
@@ -304,9 +236,9 @@ var rurl = 'http://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&api_key=
             $.getJSON(rurl, function (tracks) {
 
   $.each(tracks.tracks.track, function (i, track) {
-                    var players = '<section class="player">' +
-                        '<section class="player-icon" style="background-image: url(' + track.image[1]["#text"] + ')"></section>' +
-                        '<section class="track">' +
+                    var players = '<section class="all-players__player">' +
+                        '<section class="all-players__player-icon" style="background-image: url(' + track.image[1]["#text"] + ')"></section>' +
+                        '<section class="all-players__track">' +
                         '<b>' + track.name + '</b>' +
                         ' ' + track.artist["name"] + ' ' +
                         '</section>' +
@@ -321,7 +253,7 @@ var rurl = 'http://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&api_key=
 
 
 
-    $(document).on('click','.player', function ()  {
+    $(document).on('click','.all-players__player', function ()  {
             var perem = $(this).text();
             var res = gapi.client.youtube.search.list({
                 part: "snippet",
@@ -330,9 +262,9 @@ var rurl = 'http://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&api_key=
             });
             res.execute(function(response) {
                 var results = response.result;
-                $(".youtube").html("");
+                $(".r-box__youtube").html("");
                 $.each(results.items, function(index, arr) {
-                    $(".youtube").append('<iframe width="300" height="200"  src="//www.youtube.com/embed/'+ arr.id.videoId +'?rel=0&autoplay=1" frameborder="0"></iframe>');
+                    $(".r-box__youtube").append('<iframe width="300" height="200"  src="//www.youtube.com/embed/'+ arr.id.videoId +'?rel=0&autoplay=1" frameborder="0"></iframe>');
                 });
 
             });
@@ -343,11 +275,11 @@ var rurl = 'http://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&api_key=
             var purl = 'http://ws.audioscrobbler.com/2.0/?method=track.search&track=' + music.value + '&api_key=1c9761c61335ffc5a5d4fe127a40fbd2&format=json&callback=?';
           $.getJSON( purl, function(musics) {
             $.each(musics.results.trackmatches.track, function(i, item) {
-              var template = '<section class="player">' +
-                        '<section class="player-icon" style="background-image: url(' + item.image[1]["#text"] + ')"></section>' +
+              var template = '<section class="all-players__player__player">' +
+                        '<section class="all-players__player-icon" style="background-image: url(' + item.image[1]["#text"] + ')"></section>' +
                         '<section class="track">' +
                         '<b>' + item.name + '</b>' +
-                        ' ' + item.artist["name"] + ' ' +
+                        ' ' + item.artist + ' ' +
                         '</section>' +
                         '</section>';
                 $('.all-players').append(template);
@@ -360,34 +292,7 @@ function init() {
   gapi.client.setApiKey("AIzaSyArGfsfADRbwg5rHu_Y0jeTplcMrK9nL5s");
 }
 
-
-       /* $(".a-input-search").click( function() {alert ($(".input-search").value); });
-        var array = [ 
-            {img_url: "album.jpg",name: "ghghh" , author: "ffff", time: 3.25},  
-            {img_url: "album.jpg",name: "ghggffddfghjkkjhgfdfhhh" , author: "ffff", time: 3.25} ]
-
-   
-var $all_players = $(".all-players")[0];
-            for (var $i=0; $i<array.length; $i++){ 
- var $mus_player = '<section class="player">'
-        $mus_player += '<section class="player-icon">'
-        $mus_player += '<img src="'+ array[$i].img_url +'" class="img-player-icon">'
-        $mus_player += '</section>' 
-        $mus_player += '<section class="track">'
-        $mus_player += ' <h3>"' + array[$i].name + '" </h3>'
-        $mus_player += ' <h5>"' + array[$i].author + '" </h5>'
-        $mus_player += '</section>'
-        $mus_player += '<section class="time">"' + array[$i].time + '"'
-        $mus_player += '</section>'
-        $mus_player += '</section>' 
-
-            $(".all_players").html($mus_player);
-                 } */
-
-
         </script>
-  
-<button class="more">Загрузить еще...</button>
 
     </body>
 </html>
