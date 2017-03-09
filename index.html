@@ -6,182 +6,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"></script>
 <script src="https://apis.google.com/js/client.js?onload=init"></script>
-
+<link href="style.css" rel="stylesheet" type="text/css"/>
       
 </head>
-
-    <style>
-    * {
-        margin: 0;
-        padding: 0;
-    }
-
-    html, body, .main{
-        min-width: 960px;
-    }
-
-    .album {
-        width: 300px;
-        height: 300px;  
-    }
-
-    .all-players {
-         width: 882px;
-        margin-bottom: 5px;
-    }
-
-    .all-players:after {
-        clear: both;
-        content: '';
-    }
-
-    .header__a-input-search {
-        width: 19px;
-        height: 19px;
-        cursor: pointer;
-        float: right;
-        margin-left: 5px;
-    }
-
-     .author h3, .author h5{
-        text-align: center;
-    }
-
-    .back, .play, .next {
-        float: left;
-        width: 50px;
-        height: 50px;
-        margin: 5px;
-    }   
-
-    .back img,.play img,.next img{
-        max-width: 100%;
-    }
-    
-    body {
-        background: url("ofon.jpg") no-repeat center center fixed;
-        -moz-background-size: cover; /* Firefox 3.6+ */
-        -webkit-background-size: cover; /* Safari 3.1+ и Chrome 4.0+ */
-        -o-background-size: cover; /* Opera 9.6+ */
-        background-size: cover; /* Современные браузеры */
-	}
-
-    .icons{
-        margin-left: 61px;
-    }
-
-    .r-box {
-        width: 330px;
-        height: 300px;
-        float: right;
-        margin: 30px 23px 56px 6px;
-        border: 1px solid;
-    }
-
-    .header__input-search {
-		border-radius: 20px;
-        border: 0px;
-        margin-left: 10px;
-        width: 160px;
-        height: 20px;
-        padding: 0 3px 0 3px;
-	}
-
-    .img-album {
-        max-width: 100%;
-    }
-
-    .header__img-input-search{
-        max-width: 100%;
-    }
-
-
-    header {
-        background: url("fon.jpg") no-repeat;
-        -moz-background-size: 100%; /* Firefox 3.6+ */
-        -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
-        -o-background-size: 100%; /* Opera 9.6+ */
-        background-size: 100%;
-        height: 100px; /* Современные браузеры */
-    }
-
-    .header__logo {
-        margin: 10px;
-        float: left;
-        width: 82px;
-    }
-
-    .header__logo-img {
-        max-width: 100%;
-        border-radius: 40px;
-    }
-
-    .more{
-        border: none;
-        background: url(fon.jpg) no-repeat;
-        color: #f2f2f2;
-        padding: 10px;
-        font-size: 13px;
-        border-radius: 16px;
-        position: relative;
-        box-sizing: border-box;
-        margin-bottom: 5px;
-        margin-left: 372px;
-    }
-
-    
-
-    .all-players__player {
-        padding:10px;
-        width: 100%;
-        overflow: hidden;
-    }
-
-    .all-players__player:after{
-        content: '';
-        clear: both;
-    }
-
-    .all-players__player:hover {
-         outline: 1px solid #4A90E2;
-    }
-
-    .all-players__player-icon {
-        float: left;
-        width: 40px;
-        height: 40px;
-        margin-right:5px;
-    }
-
-    .header__profile {
-        float: right;
-        margin-top: 20px;
-        margin-right: 25px;
-        width: 50px;
-        height: 50px;
-    }
-
-    .header__profile-img {
-        max-width: 100%;
-        border-radius: 40px;
-    }
-
-    .header__search {
-        float: left;
-        margin-top: 40px;
-    }
-
-    .time {
-        float: right;
-        margin-right: 10px;
-    }
-    
-    .all-players__track{
-        width: 80%;
-        float: left;
-    }
-
-    </style>
 
     <body>
 <header>
@@ -203,96 +30,29 @@
 <section class="main">
 
 	<section class="r-box">
-	    <section class = "r-box__youtube" align = "center" >
+	    <section class = "r-box__youtube"></section>
+       <!-- Популярные треки -->
+        <section class="r-box__popular"> </section>
 	    </section>
 
 	</section> 
 
 	<section class="all-players">
 	<!-- <section class="player">
-
 	    <section class="player-icon">
 	        <img src="album.jpg" class="img-player-icon"> 
 	    </section>
-
 	    <section class="track">
 	        <h3 class="author"> Шальная императрица </h3>
 	        <h5> Ирина Аллегрова </h5>
 	    </section>
-
 	</section> -->
 
 	</section>
 
 </section>
 
-
- 
-<script>
-
-    window.onload  = function() {
-//1c9761c61335ffc5a5d4fe127a40fbd2
-var rurl = 'http://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&api_key=1c9761c61335ffc5a5d4fe127a40fbd2&format=json&callback=?';
-            $.getJSON(rurl, function (tracks) {
-
-  $.each(tracks.tracks.track, function (i, track) {
-                    var players = '<section class="all-players__player">' +
-                        '<section class="all-players__player-icon" style="background-image: url(' + track.image[1]["#text"] + ')"></section>' +
-                        '<section class="all-players__track">' +
-                        '<b>' + track.name + '</b>' +
-                        ' ' + track.artist["name"] + ' ' +
-                        '</section>' +
-                        '</section>';
-                    if (i === 5) {
-                        return false;
-                    }
-                     $('.all-players').append(players);
-  });
-            }); 
-    }
-
-
-
-    $(document).on('click','.all-players__player', function ()  {
-            var perem = $(this).text();
-            var res = gapi.client.youtube.search.list({
-                part: "snippet",
-                q: perem,
-                maxResults: 1
-            });
-            res.execute(function(response) {
-                var results = response.result;
-                $(".r-box__youtube").html("");
-                $.each(results.items, function(index, arr) {
-                    $(".r-box__youtube").append('<iframe width="300" height="200"  src="//www.youtube.com/embed/'+ arr.id.videoId +'?rel=0&autoplay=1" frameborder="0"></iframe>');
-                });
-
-            });
-        });
-
-        $('.a-input-search').click( function(){
-            var music = $('.input-search')[0];
-            var purl = 'http://ws.audioscrobbler.com/2.0/?method=track.search&track=' + music.value + '&api_key=1c9761c61335ffc5a5d4fe127a40fbd2&format=json&callback=?';
-          $.getJSON( purl, function(musics) {
-            $.each(musics.results.trackmatches.track, function(i, item) {
-              var template = '<section class="all-players__player__player">' +
-                        '<section class="all-players__player-icon" style="background-image: url(' + item.image[1]["#text"] + ')"></section>' +
-                        '<section class="track">' +
-                        '<b>' + item.name + '</b>' +
-                        ' ' + item.artist + ' ' +
-                        '</section>' +
-                        '</section>';
-                $('.all-players').append(template);
-            });
-        });
-            return false;
-        });
-
-function init() {
-  gapi.client.setApiKey("AIzaSyArGfsfADRbwg5rHu_Y0jeTplcMrK9nL5s");
-}
-
-        </script>
+<script src="scripts.js"/>
 
     </body>
 </html>
